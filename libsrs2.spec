@@ -1,10 +1,11 @@
-%define	major 2
-%define libname	%mklibname srs %{major}
+%define	major _2
+%define libname %mklibname srs %{major}
+%define develname %mklibname srs -d
 
 Summary:	SRS email address rewriting engine
 Name:		libsrs2
 Version:	1.0.18
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	BSD
 Group:		System/Libraries
 URL:		http://www.libsrs2.org/
@@ -21,7 +22,6 @@ the sender address must be rewritten to comply with SPF policy. The
 Sender Rewriting Scheme, or SRS, provides a standard for this
 rewriting which is not vulnerable to attacks by spammers.
 
-%if "%{_lib}" != "lib"
 %package -n	%{libname}
 Summary:	SRS email address rewriting engine
 Group:		System/Libraries
@@ -33,15 +33,15 @@ client IP address which submits the mail. When a mail is forwarded,
 the sender address must be rewritten to comply with SPF policy. The
 Sender Rewriting Scheme, or SRS, provides a standard for this
 rewriting which is not vulnerable to attacks by spammers.
-%endif
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Development tools needed to build programs that use libsrs2
 Group:		Development/C
 Requires:	%{libname} = %{version}
-Provides:	libsrs-devel = %{version}
+Provides:	libsrs-devel = %{version}-%{release}
+Obsoletes:	%{mklibname srs 2 -d}
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 libsrs2 is the next generation SRS library. SPF verifies that the
 Sender address of a mail matches (according to some policy) the
 client IP address which submits the mail. When a mail is forwarded,
@@ -89,7 +89,7 @@ install -m0644 debian/srs.1 %{buildroot}%{_mandir}/man1/
 %doc README NEWS AUTHORS
 %{_libdir}/lib*.so.*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %{_libdir}/*.a
 %{_libdir}/*.la
@@ -100,5 +100,3 @@ install -m0644 debian/srs.1 %{buildroot}%{_mandir}/man1/
 %defattr(-,root,root)
 %{_bindir}/srs
 %{_mandir}/man1/*
-
-
