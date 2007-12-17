@@ -12,7 +12,6 @@ URL:		http://www.libsrs2.org/
 Source0:	http://www.libsrs2.org/srs/%{name}-%{version}.tar.bz2
 BuildRequires:	autoconf2.5
 BuildRequires:	libtool
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 libsrs2 is the next generation SRS library. SPF verifies that the
