@@ -5,14 +5,14 @@
 Summary:	SRS email address rewriting engine
 Name:		libsrs2
 Version:	1.0.18
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	BSD
 Group:		System/Libraries
 URL:		http://www.libsrs2.org/
 Source0:	http://www.libsrs2.org/srs/%{name}-%{version}.tar.bz2
 BuildRequires:	autoconf2.5
 BuildRequires:	libtool
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 libsrs2 is the next generation SRS library. SPF verifies that the
@@ -70,7 +70,7 @@ Command line interface to libsrs2
 make
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %makeinstall_std
 
@@ -86,7 +86,7 @@ install -m0644 debian/srs.1 %{buildroot}%{_mandir}/man1/
 %endif
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root)
