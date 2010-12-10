@@ -5,7 +5,7 @@
 Summary:	SRS email address rewriting engine
 Name:		libsrs2
 Version:	1.0.18
-Release:	%mkrel 6
+Release:	%mkrel 7
 License:	BSD
 Group:		System/Libraries
 URL:		http://www.libsrs2.org/
