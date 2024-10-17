@@ -8,7 +8,7 @@ Version:	1.0.18
 Release:	9
 License:	BSD
 Group:		System/Libraries
-URL:		http://www.libsrs2.org/
+URL:		https://www.libsrs2.org/
 Source0:	http://www.libsrs2.org/srs/%{name}-%{version}.tar.bz2
 BuildRequires:	autoconf2.5
 BuildRequires:	libtool
