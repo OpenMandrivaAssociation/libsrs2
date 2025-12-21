@@ -10,6 +10,10 @@ License:	BSD
 Group:		System/Libraries
 URL:		https://www.libsrs2.org/
 Source0:	http://www.libsrs2.org/srs/%{name}-%{version}.tar.bz2
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	autoconf2.5
 BuildRequires:	libtool
 
